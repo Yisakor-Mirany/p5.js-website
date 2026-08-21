@@ -6,6 +6,7 @@ import {
   addAttributionToCode,
   type RemixEntry,
 } from "../utils/exampleAttribution";
+import { getExampleCodePath } from "../utils/examplePaths";
 
 import { getCurationSketches } from "./openprocessing";
 
@@ -75,13 +76,7 @@ async function prepareExample(
 
   const data = parseFrontmatter(descriptionContents);
 
-  const codePath = join(
-    descriptionPath.substring(
-      0,
-      descriptionPath.lastIndexOf("/")
-    ),
-    "code.js"
-  );
+  const codePath = getExampleCodePath(descriptionPath);
 
   let code = await readFile(codePath, "utf-8");
 
