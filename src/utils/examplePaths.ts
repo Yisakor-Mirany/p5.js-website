@@ -1,5 +1,4 @@
-import type path from "node:path";
-import { dirname, join } from "node:path";
+import path, { dirname, join } from "node:path";
 
 type PathFunctions = Pick<typeof path, "dirname" | "join">;
 
